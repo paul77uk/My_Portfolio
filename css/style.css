@@ -321,20 +321,7 @@ img {
 	Media Queries for screen wider than 45em (720px)
 ****************************************** */
 
-	@media screen and (min-width: 45em) {
-
-	    body {
-	        font-size: 107.692307692308%;
-	        }
-
-		#portfolio article,
-		#resume article {
-			float: left;
-			width: 33%;
-		}
-		
-	}
-
+	
 
 /* ******************************************
 	Print Styles
