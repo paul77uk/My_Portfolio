@@ -325,14 +325,13 @@ img {
 	    body {
 	        font-size: 107.692307692308%;
 	        }
-
+	
 		#portfolio article,
 		#resume article {
 			float: left;
 			width: 33%;
 		}
-		
-	}
+		}
 	
 
 /* ******************************************
