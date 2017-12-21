@@ -373,10 +373,51 @@ img {
 		#colophon {
 		    margin: 0 5.5%;
 		    }
-			
+
+			.name, .email {
+    float: left;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+    
+.name {
+    padding-right: .65em;
+    }
+    
+.email {
+    padding-left: .65em;
+    }
+    
+.send {
+    width: 48.6%;
+    }
 	
 	}
 	
+/* ******************************************
+	Media Queries for screen wider than 60em (960px)
+****************************************** */
+
+	@media (min-width: 60em) {
+
+.name, .email {
+    padding-right: 1.3em;
+    padding-left: 0;
+    clear: both;
+    }
+    
+.message textarea {
+    width: 50%;
+    }
+    
+.send {
+    width: 25%;
+    margin-left: 50%;
+    }
+    
+}
 
 /* ******************************************
 	Print Styles
