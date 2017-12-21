@@ -179,6 +179,12 @@ body {
 	font-family: "Roboto Condensed Light", "Helvetica Neue", Helvetica, sans-serif;
 }
 
+p, #resume li {
+	font-size: 1.063em; /* 17px / 16 = 1.063em */
+	line-height: 1.223; /* 1.3 / 1.063 = 1.223 */
+	margin: .612em 0;
+}
+
 h1,h2,h3,h4,h5,h6 {
 	    font-weight: 100;
 	    }
@@ -229,13 +235,18 @@ h6 {
 	font-weight: 200;
 		}
 		
-#nav,#masthead,#content,#colophon {
-			margin: 0 18px;
+.wrapper {
+	        padding: 0 .65em;
+	        -webkit-box-sizing: border-box;
+	        -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 		}
 		
 #masthead {
 			color:#fff;
+		        width:80%;
 		}
+		
 		
 #nav h3 {
 	text-transform: capitalize;
@@ -304,6 +315,13 @@ img {
 	max-width:100%;
 }
 
+#nav,
+#masthead,
+#content,
+#colophon {
+    margin: 0 3.3%;
+    }
+
 /* Float Clearing http://nicolasgallagher.com/micro-clearfix-hack */
 
 .group:after {
@@ -316,22 +334,48 @@ img {
     *zoom: 1; /* 3 */
     }
 
+	/* ******************************************
+	    IE 7 and below, legacy browser style fixes
+	****************************************** */
+
+	.ie .wrapper {
+	    *behavior: url("http://absolute-path.com/js/boxsizing.htc");
+	}
+
+	/* Clearfix */
+
+	.group {
+	    *zoom: 1;
+	    }
 
 /* ******************************************
 	Media Queries for screen wider than 45em (720px)
 ****************************************** */
-@media screen and (min-width: 45em) {
+
+	@media screen and (min-width: 45em) {
 
 	    body {
 	        font-size: 107.692307692308%;
 	        }
-	
+
 		#portfolio article,
 		#resume article {
 			float: left;
-			width: 33%;
+			width: 33.333%;
 		}
+		
+		#masthead {
+			max-width:40em;
 		}
+		#nav,
+		#masthead,
+		#content,
+		#colophon {
+		    margin: 0 5.5%;
+		    }
+			
+	
+	}
 	
 
 /* ******************************************
