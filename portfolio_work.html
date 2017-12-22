@@ -14,97 +14,90 @@
 		
 		<!-- Add media query support for IE8 and under. Must place media queries in external stylesheet -->
 		<script src="./js/respond.min.js"></script>
+
+		<!-- Using picturefill to load conditional images and matchmedia to provide support for IE8 and below + older browsers -->
+		<script src="js/picturefill.js"></script>
+		<script src="js/matchmedia.js"></script>
 		
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 			
 	<style type="text/css" media="all">
-	/* Form / Basic Layout */
-
-form {
-    padding: 0 0 1.3em;
-    }
-    
-form ul {
-    list-style: none;
-    padding: 1.3em 0 0;
-    }
-    
-form li {
-    padding: 0 0 .65em;
-    }
 	
-legend {
-	font-size: 1.382em; 
-	line-height: 1.223;
+	/********************************************
+	Fluid Media
+	********************************************/
+
+	figure {
+	    position: relative;
 	}
-		    
-label {
-    display: block;
-	font-size: 1em;
-	line-height: 1.56;
-    padding: 0 0 .325em;
+
+	figure img,
+	figure object,
+	figure embed,
+	figure video {
+	    display: block;
+	    max-width: 100%; 
 	}
-		
-legend, label {      
-	font-weight: 300;
-	text-transform: uppercase;
-	color: #fff;
+
+	img {
+	    border: 0;
+	    -ms-interpolation-mode: bicubic;
 	}
+
+	/* 
+	interpolation-mode
+	http://css-tricks.com/ie-fix-bicubic-scaling-for-images/
+	 */
 	
-input,
-textarea {
-    display: block;
-    width: 100%;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 1em;
-	line-height: 1.3;
-	font-weight: 500;
-    padding: .65em;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    }
-
-/**
- * 1. Remove default vertical scrollbar in IE 6/7/8/9.
- * 2. Improve readability and alignment in all browsers.
- */
-
-textarea {
-    padding-bottom: 10%;
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
-    }
-
-.send {
-    display: inline-block;
-    max-width: 30em;
-    font-size: 1em;
-    line-height: 1;
-    font-weight: 500;
-    color: #fff;
-    text-decoration: none;
-    background: #0074b0;
-    margin: .65em .26em;
-    padding: .975em;
-    border: 0;
-    border-radius: 1.3em;
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, .65);
-    }
-    
-.send:hover {
-    background: #6f6f6f;
-    }
-    
-.send:active,
-.send:focus {
-    background: #555;
-    }
 	
-				
+/* Creates hover effect on Portfolio images */
+	#portfolio figure:hover,
+	.box:hover {
+	    -moz-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	    -webkit-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	    box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	}
+
+	/* Image Offset for Indication of Linked Content */
+
+	#portfolio figure:hover {
+	    bottom: .26em;
+	}
+
+	@media screen and (min-width: 45em) {
+#container-header {
+	background: #352a38 url("img/bg-photo-l.jpg") no-repeat top center;
+	padding: 10% 0;
+-webkit-background-size: cover;
+			    -moz-background-size: cover;
+			    background-size: cover;
+			}
+		}
 			
+			@media screen and (max-width: 45em) {
+		#container-header {
+		    background: #352a38 url("img/bg-photo-s.jpg") no-repeat top center;
+			-webkit-background-size: cover;
+		    -moz-background-size: cover;
+		    background-size: cover;
+			padding: 10% 0;
+		}
+	}		
+			
+/* Headshot */
+
+#maya {
+    width: 25%;
+    height: 0;
+    padding-bottom: 25%;
+    }
+    
+#maya img {
+    width: 100%;
+    }
+
 	</style>
 	</head>
 
@@ -113,7 +106,7 @@ textarea {
 			<section id="nav" class="wrapper">
 				<h3>Paul Vickers</h3>
 				<!-- Turn off for now
-				<nav> 
+				<nav>
 					<ul>
 						<li>Portfolio</li>
 						<li>Resume</li>
@@ -126,6 +119,19 @@ textarea {
 		</div>
 		<div id="container-header">
 			<header id="masthead" class="wrapper">
+				<figure id="maya"> 
+    <div data-picture data-alt="Maya Chopra">
+        <div data-src="img/headshot-s.png"></div>
+        <div data-src="img/headshot-m.png" data-media="(min-width: 45em)"></div>
+        <div data-src="img/headshot-l.png" data-media="(min-width: 60em)"></div>
+        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+        <noscript>
+            <img src="./img/headshot-s.png" alt="Maya Chopra">
+        </noscript>
+    </div>
+</figure>
+
+				
 				<h1>Hi, I'm Paul</h1>
 
 				<h2>A Nothern-Irish based designer/developer hybrid with a passion for user experience and the web</h2>
@@ -141,25 +147,29 @@ textarea {
 						<p>Some of the things I've been working on lately</p>
 					</header>
 					<article class="group wrapper">
-				<h4>SoloLearn</h4>
+					    <h4>>Udacity</h4>
+					        <a href="https://classroom.udacity.com/me">
+					            <figure>
+					                <img src="UdacityLogo.png" alt="Udacity Logo">	
+					            </figure>
+					        </a>
+					</article>
 					
-						<figure>
-							<img src="SoloLearnLogo.png" alt="Solo Learn Logo">
-						</figure>
-				</article>
-				<article class="group wrapper">
-				<h4>Udacity</h4>
-						
-							<figure>
-								<img src="UdacityLogo.png" alt="Udacity Logo">
-							</figure>
-				</article>
 				<article class="group wrapper">
 				<h4>Gynasium</h4>
-						
+						<a href="https://thegymnasium.com/dashboard">
 							<figure>
 								<img src="gymnasium_logo.png" alt="Gymnasium Logo">
 							</figure>
+						</a>
+				</article>
+				<article class="group wrapper">
+				<h4>freeCodingCamp</h4>
+						<a href="https://www.freecodecamp.org">
+							<figure>
+								<img src="freeCodingCampImg.png" alt="freeCodingCamp Logo">
+							</figure>
+						</a>
 				</article>
 				
 				</section>
@@ -178,7 +188,7 @@ textarea {
 
 						<h6>Studying</h6>
 
-						<p>Studying Web Design, Java and Android Developement</p>
+						<p>Studying Web Design, Java and Android Development</p>
 					</div>
 					</article>
 					<article class="wrapper">
@@ -212,31 +222,32 @@ textarea {
 						</footer>
 			
 				</section>
+		
 			</article>
 		</div>
-		<div id="container-footer">    
-		<form>
-    <fieldset class="wrapper">
-        <legend>Contact</legend>
-            <ul class="group">
-                <li class="name">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" />
-                </li>
-                <li class="email">
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" />
-                </li>
-                <li class="message">
-                    <label for="message">Say Hello</label>
-                    <textarea id="message" name="message"></textarea>
-                </li>
-            </ul>
-        <input class="send" type="submit" name="submit" value="Send" />
-    </fieldset>
-</form>       
+		<div id="container-footer">
+			<form>
+			    <fieldset class="wrapper">
+			        <legend>Contact</legend>
+			            <ul class="group">
+			                <li class="name">
+			                    <label for="name">Your Name</label>
+			                    <input type="text" id="name" name="name" />
+			                </li>
+			                <li class="email">
+			                    <label for="email">Your Email</label>
+			                    <input type="email" id="email" name="email" />
+			                </li>
+			                <li class="message">
+			                    <label for="message">Say Hello</label>
+			                    <textarea id="message" name="message"></textarea>
+			                </li>
+			            </ul>
+			        <input class="send" type="submit" name="submit" value="Send" />
+			    </fieldset>
+			</form>           
 			<footer id="colophon" class="wrapper">
-				<p>©2013 all rights reserved. Fill out a form here to get in touch.</p>
+				<p>©2013 all rights reserved. </p>
 			</footer>
 		</div>	
 	</body>
