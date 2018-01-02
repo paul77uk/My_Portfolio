@@ -25,79 +25,108 @@
 			
 	<style type="text/css" media="all">
 	
-	/********************************************
-	Fluid Media
-	********************************************/
+	#nav {
+    padding: .65em 0;
+}
+#nav h3 {
+    float: left;
+    text-transform: capitalize; 
+}
+#nav ul {
+    list-style: none;
+    padding: 0;
+    border-bottom: 1px solid #eee;
+    margin: .65em 0 .39em;
+}
 
-	figure {
-	    position: relative;
-	}
-
-	figure img,
-	figure object,
-	figure embed,
-	figure video {
-	    display: block;
-	    max-width: 100%; 
-	}
-
-	img {
-	    border: 0;
-	    -ms-interpolation-mode: bicubic;
-	}
-
-	/* 
-	interpolation-mode
-	http://css-tricks.com/ie-fix-bicubic-scaling-for-images/
-	 */
-	
-	
-/* Creates hover effect on Portfolio images */
-	#portfolio figure:hover,
-	.box:hover {
-	    -moz-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
-	    -webkit-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
-	    box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
-	}
-
-	/* Image Offset for Indication of Linked Content */
-
-	#portfolio figure:hover {
-	    bottom: .26em;
-	}
-
-	@media screen and (min-width: 45em) {
-#container-header {
-	background: #352a38 url("keyboard-black-notebook-input-l.jpeg") no-repeat top center;
-	padding: 10% 0;
--webkit-background-size: cover;
-			    -moz-background-size: cover;
-			    background-size: cover;
-			}
-		}
-			
-			@media screen and (max-width: 45em) {
-		#container-header {
-		    background: #352a38 url("keyboard-black-notebook-input-s.jpeg") no-repeat top center;
-			-webkit-background-size: cover;
-		    -moz-background-size: cover;
-		    background-size: cover;
-			padding: 10% 0;
-		}
-	}		
-			
-/* Headshot */
-
-#paul {
-    width: 25%;
+#nav li {
+   border-top: 1px solid #eee;
+}
+#nav a {
+   display: block;
+   font-size: 1.063em;
+   color: #333;
+   text-decoration: none;
+   padding: .975em 1.3em; 
+}
+#nav a:hover {
+   background: #f8f8f8;
+}
+#nav nav {
     height: 0;
-    padding-bottom:30%;
+    overflow: hidden;
+}
+
+body { 
+    -webkit-animation: bugfix infinite 1s; 
+}
+
+@-webkit-keyframes bugfix {
+    from {padding: 0;} 
+    to {padding: 0;} 
+}
+
+#nav input[type=checkbox] {
+    position: absolute;
+    top: -999em;
+    left: -999em;
+}
+
+#nav label { 
+    display: block;
+    background: url("img/icon-menu.png") no-repeat right center;
+    text-indent: -999em;
+    cursor: pointer;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+}
+
+#nav input[type=checkbox]:checked ~ nav {
+    height: auto;
+    overflow: hidden;  
+}
+
+@media screen and (min-width: 45em) {
+
+    /*
+    1. Remove padding from one-column layout style.
+    */
+    
+    #nav {
+        padding: 0;
+    }
+
+    #nav h3 {
+         margin: .39em 1.3em 0 0;
+    }
+
+    #nav label {
+        display: none;
+    }
+
+     #nav nav {
+        height: auto;
+        overflow: visible;
     }
     
-#paul img {
-    width: 100%;
+    #nav ul {
+        border: 0;
+        margin: 0;
+        }
+
+        #nav li {
+        display: inline;
+        border: 0;
     }
 
+    #nav a {
+        display: inline-block;
+        }
+
+			
+			}
 	</style>
 	</head>
 
@@ -105,16 +134,20 @@
 		<div id="container-nav">
 			<section id="nav" class="wrapper">
 				<h3>Paul Vickers</h3>
-				<!-- Turn off for now
+				<!-- Checkbox Hack markup -->
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" onclick>Menu</label>
+        <!-- /Checkbox Hack markup -->
+				
 				<nav>
-					<ul>
-						<li>Portfolio</li>
-						<li>Resume</li>
-						<li>LinkedIn Profile</li>
-						<li>Contact</li>
-					</ul>
-				</nav>
-			-->
+            <ul>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="./">LinkedIn Profile</a></li> <!-- No destination yet -->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
 			</section>
 		</div>
 		<div id="container-header">
@@ -226,7 +259,7 @@
 			</article>
 		</div>
 		<div id="container-footer">
-			<form>
+			<form id"contact">
 			    <fieldset class="wrapper">
 			        <legend>Contact</legend>
 			            <ul class="group">
