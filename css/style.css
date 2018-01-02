@@ -177,7 +177,7 @@ html {
 
 body {
 	font-family: "Roboto Condensed Light", "Helvetica Neue", Helvetica, sans-serif;
-	background: #eee url("../img/bg-pattern.png") repeat 0 0;
+	background: #eee url("/img/bg-pattern.png") repeat 0 0;
 }
 
 p, #resume li {
