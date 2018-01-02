@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Maya Chopra's portfolio</title>
+		
+		<!-- Viewport meta tag to prevent iPhone from scaling our page -->
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		
+		<link rel="stylesheet" href="./css/style.css"/>
+		
+		<!-- Normalize hide address bar for iOS and Android -->
+		<script src="./js/hideaddressbar.js"></script>
+		
+		<!-- Add media query support for IE8 and under. Must place media queries in external stylesheet -->
+		<script src="./js/respond.min.js"></script>
+		
+		<!-- Using picturefill to load conditional images and matchmedia to provide support for IE8 and below + older browsers -->
+		<script src="js/picturefill.js"></script>
+		<script src="js/matchmedia.js"></script>
+		
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+			
+	<style type="text/css" media="all">
+	#nav {
+	    padding: .65em 0;
+	}
+	
+	#nav h3 {
+	    float: left;
+	    text-transform: capitalize; 
+	}
+	
+	#nav ul {
+	    list-style: none;
+	    padding: 0;
+	    border-bottom: 1px solid #eee;
+	    margin: .65em 0 .39em;
+	}
+
+	#nav li {
+	   border-top: 1px solid #eee;
+	}
+	
+	#nav a {
+	   display: block;
+	   font-size: 1.063em;
+	   color: #333;
+	   text-decoration: none;
+	   padding: .975em 1.3em; 
+	}
+	
+	#nav a:hover {
+	   background: #f8f8f8;
+	}
+	
+	#nav nav {
+	    height: 0;
+	    overflow: hidden;
+	}
+	
+	
+	body { 
+	    -webkit-animation: bugfix infinite 1s; 
+	}
+
+	@-webkit-keyframes bugfix {
+	    from {padding: 0;} 
+	    to {padding: 0;} 
+	}
+	
+	#nav input[type=checkbox] {
+	    position: absolute;
+	    top: -999em;
+	    left: -999em;
+	}
+	
+	#nav label { 
+	    display: block;
+	    background: url("img/icon-menu.png") no-repeat right center;
+	    text-indent: -999em;
+	    cursor: pointer;
+	    -webkit-user-select: none;  /* Chrome all / Safari all */
+	    -moz-user-select: none;     /* Firefox all */
+	    -ms-user-select: none;      /* IE 10+ */
+	    user-select: none;
+	}
+	
+	#nav input[type=checkbox]:checked ~ nav {
+	    height: auto;
+	    overflow: hidden;  
+	}
+	
+	@media screen and (min-width: 45em) {
+
+	    /*
+	    1. Remove padding from one-column layout style.
+	    */
+    
+	    #nav {
+	        padding: 0;
+	    }
+		
+	    #nav h3 {
+	         margin: .39em 1.3em 0 0;
+	    }
+		
+	    #nav label {
+	        display: none;
+	    }
+		
+	    #nav nav {
+	        height: auto;
+	        overflow: visible;
+	    }
+		
+	    #nav ul {
+	        border: 0;
+	        margin: 0;
+	        }
+		#nav li {
+		        display: inline;
+		        border: 0;
+		    }
+		#nav a {
+		        display: inline-block;
+		        }
+	}
+			
+	</style>
+	</head>
+
+	<body lang="en">
+		<div id="container-nav">
+			<section id="nav" class="wrapper">
+				<h3>Maya Chopra</h3>
+		        <!-- Checkbox Hack markup -->
+		        <input type="checkbox" id="toggle" />
+		        <label for="toggle" onclick>Menu</label>
+		        <!-- /Checkbox Hack markup -->
+		        <nav>
+		            <ul>
+		                <li><a href="#portfolio">Portfolio</a></li>
+		                <li><a href="#resume">Resume</a></li>
+		                <li><a href="./">LinkedIn Profile</a></li> <!-- No destination yet -->
+		                <li><a href="#contact">Contact</a></li>
+		            </ul>
+		        </nav>
+				
+			
+			</section>
+		</div>
+		<div id="container-header">
+			<header id="masthead" class="wrapper">
+				<figure id="maya"> 
+				    <div data-picture data-alt="Maya Chopra">
+				        <div data-src="img/headshot-s.png"></div>
+				        <div data-src="img/headshot-m.png" data-media="(min-width: 45em)"></div>
+				        <div data-src="img/headshot-l.png" data-media="(min-width: 60em)"></div>
+				        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+				        <noscript>
+				            <img src="img/headshot-s.png" alt="Maya Chopra">
+				        </noscript>
+				    </div>
+				</figure>
+				
+				<h1>Hi, I'm Maya</h1>
+
+				<h2>A Boston-based designer/developer hybrid with a passion for user experience and the web</h2>
+			</header>
+		</div>
+		<div id="container-content">
+			<article id="content">
+			
+				<section id="portfolio" class="group">
+				
+					<header class="wrapper">
+						<h3>My Portfolio</h3>
+						<p>Some of the things I've been working on lately</p>
+					</header>
+					<article class="group wrapper">
+					    <h4>Vitamin T Homepage</h4>
+					        <a href="/work/vitamin-t/">
+					            <figure>
+					                <img src="./img/vitamin-t.png">	
+					            </figure>
+					        </a>
+					</article>
+					
+				<article class="group wrapper">
+				<h4>RoboHead iPad App</h4>
+						<a href="/work/robohead/">
+							<figure>
+								<img src="./img/robohead.png">
+							</figure>
+						</a>
+				</article>
+				<article class="group wrapper">
+				<h4>Shareist Homepage</h4>
+						<a href="/work/shareist/">
+							<figure>
+								<img src="./img/shareist.png">
+							</figure>
+						</a>
+				</article>
+				
+				</section>
+				
+				<section id="resume" class="group">
+			
+						<header class="wrapper">
+							<h3>My Resume</h3>
+							<p>Current/previous positions and skill set</p>
+						</header>
+					<article class="wrapper">	
+					<div class="box">
+						<h4>Currently</h4>
+
+						<h5>Designer/Developer</h5>
+
+						<h6>Self-employed</h6>
+
+						<p>Design and development for a two-person studio in Boston, MA. Clients include Boston Red Sox, Sam Adams and Aerosmith.</p>
+					</div>
+					</article>
+					<article class="wrapper">
+					<div class="box">
+						<h4>Previously</h4>
+
+						<h5>Lead UI Designer</h5>
+
+						<h6>Aquent University</h6>
+
+						<p>Lead designer and theme developer for AU's home-built CMS. Worked with several other groups at the university as well.</p>
+					</div>
+					</article>
+					<article class="wrapper">
+					<div class="box">
+						<h4>Skills</h4>
+
+						<ul>
+							<li>Photoshop, Fireworks and Illustrator</li>
+							<li>HTML5 &amp; CSS3</li>
+							<li>Responsive Web Design</li>
+							<li>Mobile App (Native and Web) Design</li>
+						</ul>
+					</div>
+					</article>
+						<footer class="wrapper">
+							<p>For a full work history, have a look at my LinkedIn Profile</p>
+						</footer>
+			
+				</section>
+		
+			</article>
+		</div>
+		<div id="container-footer">
+			<form id="contact">
+			    <fieldset class="wrapper">
+			        <legend>Contact</legend>
+			            <ul class="group">
+			                <li class="name">
+			                    <label for="name">Your Name</label>
+			                    <input type="text" id="name" name="name" />
+			                </li>
+			                <li class="email">
+			                    <label for="email">Your Email</label>
+			                    <input type="email" id="email" name="email" />
+			                </li>
+			                <li class="message">
+			                    <label for="message">Say Hello</label>
+			                    <textarea id="message" name="message"></textarea>
+			                </li>
+			            </ul>
+			        <input class="send" type="submit" name="submit" value="Send" />
+			    </fieldset>
+			</form>           
+			<footer id="colophon" class="wrapper">
+				<p>©2013 all rights reserved. </p>
+			</footer>
+		</div>	
+	</body>
+</html>
