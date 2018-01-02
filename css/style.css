@@ -252,8 +252,8 @@ h6 {
 
 #maya {
 		    width: 25%;
-		    height: 10%;
-		    padding-bottom: 0;
+		    height: 0;
+		    margin-top: 10px;
 		    }
     
 #maya img {
