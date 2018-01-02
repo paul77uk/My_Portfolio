@@ -248,6 +248,17 @@ h6 {
 		        width:80%;
 		}
 		
+/* Headshot */
+
+#maya {
+		    width: 25%;
+		    height: 0;
+		    padding-bottom: 25%;
+		    }
+    
+#maya img {
+		    width: 100%;
+		    }		
 		
 #nav h3 {
 	text-transform: capitalize;
@@ -287,6 +298,20 @@ h6 {
 	padding: .975em; /* 3/4 of 1.3 */
 		}
 		
+/* Creates hover effect on Portfolio images */
+#portfolio figure:hover,
+.box:hover {
+	 -moz-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	 -webkit-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	 box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+				}
+
+/* Image Offset for Indication of Linked Content */
+
+#portfolio figure:hover {
+		 bottom: .26em;
+				}
+		
 section footer {
 	clear: both;
 		   }
@@ -294,6 +319,7 @@ section footer {
 #container-nav {
 	background:#fff;
 }
+
 
 
 #container-content {
@@ -317,6 +343,36 @@ img {
 #colophon {
     margin: 0 3.3%;
     }
+	
+
+
+/********************************************
+	Fluid Media
+********************************************/
+
+	figure {
+	    position: relative;
+	}
+
+	figure img,
+	figure object,
+	figure embed,
+	figure video {
+	    display: block;
+	    max-width: 100%; 
+	}
+
+	img {
+	    border: 0;
+	    -ms-interpolation-mode: bicubic;
+	}
+
+	/* 
+	interpolation-mode
+	http://css-tricks.com/ie-fix-bicubic-scaling-for-images/
+	 */
+	
+
 
 /* ******************************************
 	   Form Styles Basic Layout
@@ -429,6 +485,20 @@ img {
 	    *zoom: 1;
 	    }
 
+
+/* ******************************************
+			Media Queries for screen less than 45em (720px)
+****************************************** */
+	@media screen and (max-width: 45em) {
+	#container-header {
+		background: #352a38 url("../img/bg-photo-s.jpg") no-repeat top center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+		padding: 10% 0;
+			}
+		}	
+
 /* ******************************************
 	Media Queries for screen wider than 45em (720px)
 ****************************************** */
@@ -455,7 +525,20 @@ img {
 		    margin: 0 5.5%;
 		    }
 			
-			.name, .email {
+		#container-header {
+			background: #352a38 url("../img/bg-photo-l.jpg") no-repeat top center;
+			padding:5% 0;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			background-size: cover;
+		}
+			
+			
+	    #nav label {
+	        display: none;
+	    }
+			
+		.name, .email {
 			    float: left;
 			    width: 50%;
 			    -webkit-box-sizing: border-box;
@@ -463,15 +546,15 @@ img {
 			    box-sizing: border-box;
 			    }
     
-			.name {
+		.name {
 			    padding-right: .65em;
 			    }
     
-			.email {
+		.email {
 			    padding-left: .65em;
 			    }
     
-			.send {
+		.send {
 			    width: 48.6%;
 			    }
 	
