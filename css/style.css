@@ -248,7 +248,7 @@ h6 {
 		        width:80%;
 		}
 
-.intro {margin: 10px;}
+.intro {float: bottom; height: 65%;}
 	
 		
 /* Headshot */
