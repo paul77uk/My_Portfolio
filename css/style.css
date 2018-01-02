@@ -177,7 +177,7 @@ html {
 
 body {
 	font-family: "Roboto Condensed Light", "Helvetica Neue", Helvetica, sans-serif;
-	background: #eee url("/img/bg-pattern.png") repeat 0 0;
+	background: #eee url("img/bg-pattern.png") repeat 0 0;
 }
 
 p, #resume li {
@@ -491,7 +491,7 @@ img {
 ****************************************** */
 	@media screen and (max-width: 45em) {
 	#container-header {
-		background: #352a38 url("/img/bg-photo-s.jpeg") no-repeat top center;
+		background: #352a38 url("img/bg-photo-s.jpeg") no-repeat top center;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		background-size: cover;
@@ -526,7 +526,7 @@ img {
 		    }
 			
 		#container-header {
-			background: #352a38 url("/img/bg-photo-l.jpeg") no-repeat top center;
+			background: #352a38 url("img/bg-photo-l.jpeg") no-repeat top center;
 			padding:5% 0;
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
