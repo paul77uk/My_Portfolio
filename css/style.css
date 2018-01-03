@@ -247,19 +247,12 @@ h6 {
 			color:#fff;
 		        width:80%;
 		}
-@media screen and (max-width: 480px) {
-.intro {margin-top: 90px;}
-}
-@media screen and (min-width: 480px) {
-.intro {margin-left: 200px;}
-}
-	
 		
 /* Headshot */
 
 #maya {
 		    width: 25%;
-		    height: 0;
+		    margin-bottom: 10px;
 		    
 		    }
     
